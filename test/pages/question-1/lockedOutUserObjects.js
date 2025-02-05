@@ -1,5 +1,5 @@
 class lockedOutUserObjects {
-    get enterUderName(){
+    get enterUserName(){
         return $('//input[@id="user-name"]');
     }
     get password(){
