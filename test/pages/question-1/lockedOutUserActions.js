@@ -1,4 +1,4 @@
-const lockedOutUserObjects = require('./lockedOutUserObjects');
+const lockedOutUserObjects = require('./lockedOutUserObjects.js');
 
 class lockedOutUserActions {
     async enterUserName(){

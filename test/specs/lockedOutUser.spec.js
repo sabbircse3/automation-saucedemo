@@ -1,8 +1,7 @@
-const lockedOutUserActions = require("../pages/question-1/lockedOutUserActions");
+const lockedOutUserActions = require("../pages/question-1/lockedOutUserActions.js");
 
 describe("Locked Out User", () => {
     it("should show an error message when the user is locked out", async () => {
-        //await browser.url("/login");
         await lockedOutUserActions.enterUserName();
         await lockedOutUserActions.enterPassword();
         await lockedOutUserActions.clickLoginButton();
