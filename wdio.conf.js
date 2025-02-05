@@ -84,17 +84,17 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    // baseUrl: 'http://localhost:8080',
+    baseUrl: 'https://www.saucedemo.com/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 50000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
-    connectionRetryTimeout: 120000,
+    connectionRetryTimeout: 150000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
+    connectionRetryCount: 5,
     //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
@@ -129,7 +129,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 120000
     },
 
     //
@@ -197,8 +197,10 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: async function (suite) {
+        await browser.maximizeWindow();
+        await browser.url(this.baseUrl);
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
@@ -226,9 +228,9 @@ exports.config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
-
+    afterSuite: async function (suite) {
+        await browser.quit();
+    },
 
     /**
      * Hook that gets executed after the suite has ended
