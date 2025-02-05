@@ -3,42 +3,52 @@ const performanceGlitchUserObjects = require("../pages/question-3/performanceGli
 class performanceGlitchUserActions{
        async enterUsername() {
             await performanceGlitchUserObjects.enterUserName.setValue("performance_glitch_user");
+            await browser.pause(3000);
         }
         async enterPassword() {
             await performanceGlitchUserObjects.enterPassword.setValue("secret_sauce");
+            await browser.pause(3000);
         }
         async clickLogin() {  
             await performanceGlitchUserObjects.loginButton.click();
+            await browser.pause(3000);
         }
         async clickMenuButton(){
             await performanceGlitchUserObjects.humbergerButton.click();
+            await browser.pause(3000);
         }
         async clicResetButton(){
             await performanceGlitchUserObjects.clickResetApp.click();
+            await browser.pause(3000);
         }
         async filterbutton(){
             await performanceGlitchUserObjects.filterProduct.click();
+            await browser.pause(3000);
         }
         async addCart(){
             await performanceGlitchUserObjects.addCartProduct.click();
+            await browser.pause(3000);
         }
         async clickShipping(){
             await performanceGlitchUserObjects.clickShippingCart.click();
+            await browser.pause(3000);
         }
         async clickCheckout(){
             await performanceGlitchUserObjects.clickCheckout.click();
+            await browser.pause(3000);
         }
         async firstName(){
-            await performanceGlitchUserObjects.enterfirstName.setValue("Md Asadul");
+            await performanceGlitchUserObjects.enterfirstName.setValue("Sabbir");
         }
         async lastName(){
-            await performanceGlitchUserObjects.enterLastName.setValue("Haque");
+            await performanceGlitchUserObjects.enterLastName.setValue("Hasan");
         }
         async zipCode(){
-            await performanceGlitchUserObjects.enterZipcode.setValue("6740");
+            await performanceGlitchUserObjects.enterZipcode.setValue("6700");
         }
         async countineButton(){
             await performanceGlitchUserObjects.clickCountine.click()
+            await browser.pause(3000);
         }
         async title(){
             return await performanceGlitchUserObjects.productTitle.getText();

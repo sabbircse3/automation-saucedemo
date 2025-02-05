@@ -2,59 +2,59 @@ const performanceGlitchUserActions = require("../pages/question-3/performanceGli
 
 describe("Performance Glitch User", () => {
     it("should login with valid username and valid password", async () => {
-        await GlichAction.enterUsername();
-        await GlichAction.enterPassword();
-        await GlichAction.clickLogin();
+        await performanceGlitchUserActions.enterUsername();
+        await performanceGlitchUserActions.enterPassword();
+        await performanceGlitchUserActions.clickLogin();
     });
 
     it("click on the hamburger menu Reset App State", async () => {
-        await GlichAction.clickMenuButton();
-        await GlichAction.clicResetButton();
+        await performanceGlitchUserActions.clickMenuButton();
+        await performanceGlitchUserActions.clicResetButton();
     });
 
     it("Filter the product Z to A and Add to cart one proudct", async() =>{
-        await GlichAction.filterbutton();
-        await GlichAction.addCart();
+        await performanceGlitchUserActions.filterbutton();
+        await performanceGlitchUserActions.addCart();
 
     });
     it("click on the shipping and checkout", async () => {
-        await GlichAction.clickShipping();
-        await GlichAction.clickCheckout();
+        await performanceGlitchUserActions.clickShipping();
+        await performanceGlitchUserActions.clickCheckout();
     });
 
     it("Enter the personal information", async () =>{
-        await GlichAction.firstName();
-        await GlichAction.lastName();
-        await GlichAction.zipCode();
-        await GlichAction.countineButton();
+        await performanceGlitchUserActions.firstName();
+        await performanceGlitchUserActions.lastName();
+        await performanceGlitchUserActions.zipCode();
+        await performanceGlitchUserActions.countineButton();
     });
 
     it ("Verify the products title", async () =>{
-        const actualtitle = await GlichAction.title();
+        const actualtitle = await performanceGlitchUserActions.title();
         console.log(actualtitle);
         const expectTitle = 'Test.allTheThings() T-Shirt (Red)';
         await expect(actualtitle).toContain(expectTitle);
     });
     it ("verify the product price with total price", async() => {
-        const actualTitile = await GlichAction.title();
+        const actualTitile = await performanceGlitchUserActions.title();
         console.log(actualTitile);
         await expect(actualTitile).toContain("Test.allTheThings() T-Shirt (Red)");
 
-        const actualPrice = await GlichAction.productprice();
+        const actualPrice = await performanceGlitchUserActions.productprice();
         console.log(actualPrice);
-        const expectedPrice = await GlichAction.totalPrice();
+        const expectedPrice = await performanceGlitchUserActions.totalPrice();
         console.log(expectedPrice);
         await expect(actualPrice).toBeCloseTo(expectedPrice);
     });
     it("finish the checkout", async () => {
-        await GlichAction.finishButton();
-        const successOrderB= await GlichAction.successbanner()
+        await performanceGlitchUserActions.finishButton();
+        const successOrderB= await performanceGlitchUserActions.successbanner()
         console.log(successOrderB);
         await expect(successOrderB).toContain('Thank you for your order!');
     });
     
     it ("click on the humbergar manu and logout the webstie", async ()=>{
-        await GlichAction.clickMenuButton();
-        await GlichAction.logoutButtion();
+        await performanceGlitchUserActions.clickMenuButton();
+        await performanceGlitchUserActions.logoutButtion();
     })
 });

@@ -3,42 +3,55 @@ const standardUserObjects = require('./standardUserObjects');
 class standardUserActions {
     async enterUsername() {
             await standardUserObjects.enterUserName.setValue("standard_user");
+            await browser.pause(3000);
         }
         async enterPassword() {
             await standardUserObjects.enterPassword.setValue("secret_sauce");
+            await browser.pause(3000);
         }
         async clickLogin() {  
             await standardUserObjects.loginButton.click();
+            await browser.pause(3000);
         }
         async clickMenuButton(){
             await standardUserObjects.humbergerButton.click();
+            await browser.pause(3000);
         }
         async clicResetButton(){
             await standardUserObjects.clickResetApp.click();
+            await browser.pause(3000);
         }
         async addToCart1 (){
             await standardUserObjects.productCart1.click();
+            await browser.pause(3000);
         }
         async addToCart2 (){
             await standardUserObjects.productCart2.click();
+            await browser.pause(3000);
         }
         async addToCart3(){
             await standardUserObjects.productCart3.click();
+            await browser.pause(3000);
         }
         async clickShipping(){
             await standardUserObjects.clickShippingCart.click();
+            await browser.pause(3000);
         }
         async clickCheckout(){
             await standardUserObjects.clickCheckout.click();
+            await browser.pause(3000);
         }
         async firstName(){
-            await standardUserObjects.enterfirstName.setValue("Md Asadul");
+            await standardUserObjects.enterfirstName.setValue("Sabbir");
+            await browser.pause(3000);
         }
         async lastName(){
-            await standardUserObjects.enterLastName.setValue("Haque");
+            await standardUserObjects.enterLastName.setValue("Hasan");
+            await browser.pause(3000);
         }
         async zipCode(){
-            await standardUserObjects.enterZipcode.setValue("6740");
+            await standardUserObjects.enterZipcode.setValue("6700");
+            await browser.pause(3000);
         }
         async countineButton(){
             await standardUserObjects.clickCountine.click();
