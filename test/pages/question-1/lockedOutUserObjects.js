@@ -1,15 +1,15 @@
 class lockedOutUserObjects {
-    get enterUserName(){
-        return $('//input[@id="user-name"]');
-    }
-    get password(){
+   get enterUserName() { 
+        return $('//input[@id="user-name"]'); 
+    } 
+    get enterPassword() { 
         return $('//input[@id="password"]');
     }
-    get loginButton(){
+    get loginButton() { 
         return $('//input[@id="login-button"]');
     }
-    get errorMeassage(){
-        return $('//div[@class="error-message-container error"]');
+    get errorMeasses(){ 
+        return $ ('//div[@class="error-message-container error"]');
     }
 }
 module.exports = new lockedOutUserObjects();

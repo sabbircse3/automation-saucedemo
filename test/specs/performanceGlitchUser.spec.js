@@ -1,4 +1,4 @@
-const performanceGlitchUserActions = require("../pages/question-3/performanceGlitchUserActions");
+const performanceGlitchUserActions = require("../pages/question-3/performanceGlitchUserActions.js");
 
 describe("Performance Glitch User", () => {
     it("should login with valid username and valid password", async () => {
@@ -15,7 +15,6 @@ describe("Performance Glitch User", () => {
     it("Filter the product Z to A and Add to cart one proudct", async() =>{
         await performanceGlitchUserActions.filterbutton();
         await performanceGlitchUserActions.addCart();
-
     });
     it("click on the shipping and checkout", async () => {
         await performanceGlitchUserActions.clickShipping();
@@ -56,5 +55,5 @@ describe("Performance Glitch User", () => {
     it ("click on the humbergar manu and logout the webstie", async ()=>{
         await performanceGlitchUserActions.clickMenuButton();
         await performanceGlitchUserActions.logoutButtion();
-    })
+    });
 });

@@ -1,20 +1,22 @@
 const lockedOutUserObjects = require('./lockedOutUserObjects.js');
 
 class lockedOutUserActions {
-    async enterUserName(){
+    async enterUsername() {
         await lockedOutUserObjects.enterUserName.setValue("locked_out_user");
-        await browser.pause(3000);
+        await browser.pause(5000);
     }
-    async enterPassword(){
-        await lockedOutUserObjects.password.setValue("secret_sauce");
-        await browser.pause(3000);
+    async enterPassword() {
+        await lockedOutUserObjects.enterPassword.setValue("secret_sauce");
+        await browser.pause(5000);
     }
-    async clickOnLoginButton(){
+    async clickLogin() {  
         await lockedOutUserObjects.loginButton.click();
-        await browser.pause(3000);
+        await browser.pause(5000);
     }
-    async getErrorMessage(){
-        return lockedOutUserObjects.errorMeassage.getText();
+    async errorMeasses(){
+        await browser.pause(5000);
+        return await lockedOutUserObjects.errorMeasses.getText();
+        
     }
 }
 

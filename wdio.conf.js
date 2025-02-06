@@ -1,3 +1,6 @@
+const q1 = "./test/specs/lockedOutUser.spec.js";
+const q2 = "./test/specs/standardUser.spec.js";
+const q3 = "./test/specs/performanceGlitchUser.spec.js";
 exports.config = {
     //
     // ====================
@@ -20,8 +23,8 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        './test/specs/**/*.js'
+    specs: [ q1, q2, q3
+        
     ],
     // Patterns to exclude.
     exclude: [
@@ -49,9 +52,19 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    // capabilities: [{
+    //     browserName: 'chrome'
+    // }],
+    capabilities: [
+    {
+      browserName: "chrome",
+      "goog:chromeOptions": {
+        args: ["--disable-extensions"],
+         },
+        },
+    ],
+
+
 
     //
     // ===================
@@ -60,7 +73,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -237,9 +250,9 @@ exports.config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    afterSuite: async function (suite) {
-        await browser.quit();
-    },
+    // afterSuite: async function (suite) {
+    //     await browser.quit();
+    // },
 
     /**
      * Hook that gets executed after the suite has ended
