@@ -5,10 +5,10 @@ class lockedOutUserObjects {
     get enterPassword() { 
         return $('//input[@id="password"]');
     }
-    get loginButton() { 
+    get clickLoginButton() { 
         return $('//input[@id="login-button"]');
     }
-    get errorMeasses(){ 
+    get errorMessages(){ 
         return $ ('//div[@class="error-message-container error"]');
     }
 }

@@ -1,88 +1,85 @@
 const standardUserActions = require("../pages/question-2/standardUserActions");
 
-describe("Standard User", () => {
-    it("should login with valid username and valid password", async () => {
+describe("Login with standard_user then hamburger menu Reset App Then Add Any three items to the cart verify all the product's name and the total price", () => {
+    it("Login with standard_user", async () => {
         await standardUserActions.enterUsername();
         await standardUserActions.enterPassword();
-        await standardUserActions.clickLogin();
-
+        await standardUserActions.clickOnLogin();
     });
 
-    it("click on the hamburger menu Reset App State", async () => {
-        await standardUserActions.clickMenuButton();
-        await standardUserActions.clicResetButton();
-        
+    it("hamburger menu Reset App State", async () => {
+        await standardUserActions.clickOnMenu();
+        await standardUserActions.clickOnReset();
     });
 
-    it("Add to cart 3 products", async () => {
+    it("Add Any three items to the cart", async () => {
         await standardUserActions.addToCart1();
         await standardUserActions.addToCart2();
         await standardUserActions.addToCart3();
     });
 
-    it("click on the shipping and checkout", async () => {
-        await standardUserActions.clickShipping();
-        await standardUserActions.clickCheckout();
+    it("Shipping checkout", async () => {
+        await standardUserActions.clickOnShipping();
+        await standardUserActions.clickOnCheckout();
     });
 
-    it("Enter the personal information", async () =>{
+    it("Enter personal info", async () =>{
         await standardUserActions.firstName();
         await standardUserActions.lastName();
         await standardUserActions.zipCode();
-        await standardUserActions.countineButton();
+        await standardUserActions.clickOnCountineButton();
     });
 
-    it ("Verify the products title", async () =>{
+    it ("Verify all the product's name", async () =>{
         const actualtitle1 = await standardUserActions.title1();
-        console.log(actualtitle1);
+        // console.log(actualtitle1);
         const expectTitle1 = 'Sauce Labs Backpack';
         await expect(actualtitle1).toContain(expectTitle1);
 
         const actualtitle2  = await standardUserActions.title2();
-        console.log(actualtitle2);
+        // console.log(actualtitle2);
         const expectTitle2 =  "Sauce Labs Bike Light";
         await expect(actualtitle2).toContain(expectTitle2);
 
         const actualtitle3 = await standardUserActions.title3();
-        console.log(actualtitle3);
+        // console.log(actualtitle3);
         const expectTitle3 = "Sauce Labs Bolt T-Shirt";
         await expect(actualtitle3).toContain(expectTitle3);
-
     });
 
-    it("verify the product price with total price", async() =>{
+    it("verify total price", async() =>{
         const actualprice1  = await standardUserActions.price1();
         let stagingValuepice1 = parseFloat(actualprice1.replace("$"," ")); 
-        console.log(stagingValuepice1);
+        // console.log(stagingValuepice1);
         
         const actualprice2  = await standardUserActions.price2();
         let stagingValuepice2 = parseFloat(actualprice2.replace("$", " ")); 
-        console.log(stagingValuepice2);
+        // console.log(stagingValuepice2);
 
         const actualprice3 = await standardUserActions.price3();
         let  stagingValuepice3 = parseFloat(actualprice3.replace("$", " "));
-        console.log(stagingValuepice3);
+        // console.log(stagingValuepice3);
 
         const actualTotalprice1 = (stagingValuepice1+ stagingValuepice2 + stagingValuepice3);
-        console.log(actualTotalprice1);
+        // console.log(actualTotalprice1);
 
         await standardUserActions.scrollPage();
 
         const expectPrice = await standardUserActions.totalPrice();
-        console.log(expectPrice);
+        // console.log(expectPrice);
         await expect(actualTotalprice1).toBeCloseTo(expectPrice);
     });
 
-    it("finish the checkout", async () => {
+    it("Checkout", async () => {
         await standardUserActions.finishButton();
         const successOrderB= await standardUserActions.successbanner()
         console.log(successOrderB);
         await expect(successOrderB).toContain('Thank you for your order!');
     });
 
-    it ("click on the humbergar manu and logout the webstie", async ()=>{
-        await standardUserActions.clickMenuButton();
-        await standardUserActions.logoutButtion();
+    it ("logout from the webstie", async ()=>{
+        await standardUserActions.clickOnMenu();
+        await standardUserActions.logoutButton();
     })
 });
     

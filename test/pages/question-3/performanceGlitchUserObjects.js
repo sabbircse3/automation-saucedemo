@@ -8,7 +8,7 @@ class performanceGlitchUserObjects{
     get loginButton() { 
         return $('//input[@id="login-button"]'); 
     }
-    get humbergerButton(){
+    get clickHumbergerMenuButton(){
         return $ ('//button[@id="react-burger-menu-btn"]');
     }
     get clickResetApp (){
@@ -26,16 +26,16 @@ class performanceGlitchUserObjects{
     get clickCheckout(){
         return $ ('//button[@id="checkout"]');
     }
-    get enterfirstName(){
+    get enterFirstName(){
         return $ ('//input[@placeholder="First Name"]');
     }
     get enterLastName(){
         return $ ('//input[@placeholder="Last Name"]');
     }
-    get enterZipcode(){
+    get enterZipCode(){
         return $ ('//input[@placeholder="Zip/Postal Code"]');
     }
-    get clickCountine(){
+    get clickCountineButton(){
         return $ ( '//input[@id="continue"]');
     }
     get productTitle(){
@@ -44,7 +44,7 @@ class performanceGlitchUserObjects{
     get productPrice(){
         return $ ('//div[@class="inventory_item_price"]');
     }
-    get totalprice(){
+    get totalPrice(){
         return $ ('//div[@class="summary_subtotal_label"]');
     }
     get finishButton(){
@@ -53,7 +53,7 @@ class performanceGlitchUserObjects{
     get successOrder(){
         return $ ("//h2[text()='Thank you for your order!']");
     }
-    get logoutbutton(){
+    get logoutButton(){
         return $ ('//a[@id="logout_sidebar_link"]');
     }
 }
