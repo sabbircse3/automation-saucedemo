@@ -84,15 +84,15 @@ npm install -g allure-commandline --save-dev
 
 You are asking for automation tests on the (https://www.saucedemo.com/) site.
 
-# Q1|[Mark 20] 
+# Q1|
 
 Try login with locked_out_user and verify the error message,
 
-# Q2|[Mark 20] 
+# Q2|
 
 Login with standard_user. Then from the hamburger menu Reset App State. Then Add Any three items to the cart. Then navigate up to the final checkout page and verify all the product's name and the total price. Then finish the purchase journey and verify the successful order message. Then Reset the App State again and log out.
 
-# Q3|[Mark 20] 
+# Q3|
 
 Login with performance_glitch_user and Reset App State. Then filter by name (Z to A) and select the first product into the cart. Then navigate up to the final checkout page and verify all the product's name and the total price. Then finish the purchase journey and verify the successful order message. Then Reset the App State again and log out.
 
